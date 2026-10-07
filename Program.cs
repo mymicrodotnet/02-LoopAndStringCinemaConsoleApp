@@ -32,28 +32,37 @@
 
 
 					// Nested if: if-else -> if-else 
-					if (age < 20)
+					if (age < 5 || age > 100)
 					{
-						System.Console.WriteLine("Youth price: 80 SEK");
+						System.Console.WriteLine("Free price: 0 SEK");
+
 					}
 					else
 					{
-						if (age > 64)
+
+						if (age < 20)
 						{
-							System.Console.WriteLine("Pensioner price: 90 SEK");
+							System.Console.WriteLine("Youth price: 80 SEK");
 						}
 						else
 						{
-							System.Console.WriteLine("Standard price: 120 SEK");
+							if (age > 64)
+							{
+								System.Console.WriteLine("Pensioner price: 90 SEK");
+							}
+							else
+							{
+								System.Console.WriteLine("Standard price: 120 SEK");
+							}
 						}
 					}
-					break;
 				}
 				else
 				{
 					System.Console.WriteLine("Invalid age, enter a number");
 					continue;
 				}
+				break;
 			}
 			break;
 
@@ -102,7 +111,11 @@
 				int totalCost = 0;
 				foreach (int age in ageList)
 				{
-					if (age < 20)
+					if (age < 5 || age > 100)
+					{
+						totalCost += 0;
+					}
+					else if (age < 20)
 					{
 						totalCost += 80;
 					}
@@ -132,9 +145,13 @@
 		case "4":
 			while (true)
 			{
+				// Split the string and return all non-empty elements
+				//result = s1.Split(charSeparators, StringSplitOptions.RemoveEmptyEntries);
+
 				System.Console.Write("Enter your sentence: ");
 				string sentence = Console.ReadLine()!;
-				string[] word = sentence.Split(' ');
+				// string[] word = sentence.Split(' ');
+				string[] word = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 				if (word.Length < 3)
 				{
 					System.Console.WriteLine("Please enter at least 3 words.");

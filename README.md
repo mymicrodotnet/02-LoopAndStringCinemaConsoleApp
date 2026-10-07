@@ -104,6 +104,7 @@ To access this function, a case must be created in the main menu for "1". This m
 6. If the above is true, the program should print: Pensioner price: 90 SEK
 7. Otherwise, the program should print: Standard price: 120 SEK
 
+## Menu Option 2: Group price
 We also want to have the possibility to calculate the price for an entire group. Add this option to the main menu (a case "2"). It is also acceptable to have the option in a submenu.
 
 First, we enter how many people are going to the cinema. Then we ask for the age of each person and finally print a summary in the console containing the following:
@@ -111,7 +112,7 @@ First, we enter how many people are going to the cinema. Then we ask for the age
 • Number of people
 • Total cost for the entire group
 
-## Menu Option 2: Repeat Ten Times
+## Menu Option 3: Repeat Ten Times
 
 To use another type of iteration, you will implement a for loop here. You will create it to repeat something entered by a user ten times.
 
@@ -126,7 +127,7 @@ To access this function, add a case for "3" to your main menu as well as text ex
 3. The program uses a for loop to output this text ten times on the same line, meaning WITHOUT line breaks.
 4. Example output: 1. Input, 2. Input, 3. Input, etc.
 
-## Menu Option 3: The Third Word
+## Menu Option 4: The Third Word
 
 You have previously learned how to convert strings to integers (e.g. int.Parse, int.TryParse), but now you will split a string.
 
@@ -153,7 +154,7 @@ Do not forget to comment your code carefully so that you or others can easily un
 
 1. Validate all inputs from the user. Make sure that the program does not crash when invalid input is entered.
 2. Children under five and pensioners over 100 get in for free.
-   Handle multiple consecutive spaces in part 3.
+   Handle multiple consecutive spaces in part 3. --> part 4 (string.Split() method)
 3. Add anything that you think would be interesting to include or that you would like to practice.
 
 Good luck!
