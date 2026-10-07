@@ -35,11 +35,9 @@
 					if (age < 5 || age > 100)
 					{
 						System.Console.WriteLine("Free price: 0 SEK");
-
 					}
 					else
 					{
-
 						if (age < 20)
 						{
 							System.Console.WriteLine("Youth price: 80 SEK");
@@ -80,61 +78,74 @@
 			// TryParse: the amount of people is a valid integer.
 			if (int.TryParse(inputAmountOfPeople, out int amountOfPeople))
 			{
-				System.Console.WriteLine("Number of people: " + amountOfPeople);
-
-				List<int> ageList = new List<int>();
-
-				for (int count = 1; count <= amountOfPeople; count++)
+				if (amountOfPeople >= 1)
 				{
-					System.Console.Write($"Enter age for person {count}: ");
-					string inputAge = Console.ReadLine()!;
+					System.Console.WriteLine("Number of people: " + amountOfPeople);
 
-					if (string.IsNullOrWhiteSpace(inputAge))
-					{
-						System.Console.WriteLine("Invalid age, enter a number");
-						count--;
-						continue;
-					}
+					List<int> ageList = new List<int>();
 
-					if (int.TryParse(inputAge, out int intAge))
+					for (int count = 1; count <= amountOfPeople; count++)
 					{
-						ageList.Add(intAge);
-						System.Console.WriteLine($"Age person {count} = {ageList[count - 1]}");
+						System.Console.Write($"Enter age for person {count}: ");
+						string inputAge = Console.ReadLine()!;
+
+						if (string.IsNullOrWhiteSpace(inputAge))
+						{
+							System.Console.WriteLine("Invalid age, enter a number");
+							count--;
+							continue;
+						}
+
+						if (int.TryParse(inputAge, out int intAge))
+						{
+							ageList.Add(intAge);
+							System.Console.WriteLine($"Age person {count} = {ageList[count - 1]}");
+						}
+						else
+						{
+							System.Console.WriteLine("Invalid age, enter a number");
+							count--;
+						}
 					}
-					else
+					int totalCost = 0;
+					foreach (int age in ageList)
 					{
-						System.Console.WriteLine("Invalid age, enter a number");
-						count--;
+						if (age < 5 || age > 100)
+						{
+							totalCost += 0;
+						}
+						else if (age < 20)
+						{
+							totalCost += 80;
+						}
+						else if (age > 64)
+						{
+							totalCost += 90;
+						}
+						else
+						{
+							totalCost += 120;
+						}
 					}
+					System.Console.WriteLine($"Group cinema price : {totalCost} SEK");
 				}
-
-				int totalCost = 0;
-				foreach (int age in ageList)
+				else
 				{
-					if (age < 5 || age > 100)
-					{
-						totalCost += 0;
-					}
-					else if (age < 20)
-					{
-						totalCost += 80;
-					}
-					else if (age > 64)
-					{
-						totalCost += 90;
-					}
-					else
-					{
-						totalCost += 120;
-					}
+					System.Console.WriteLine("Invalid amount, enter one o more people");
 				}
-				System.Console.WriteLine($"Group cinema price : {totalCost} SEK");
 			}
 			break;
 
 		case "3":
 			System.Console.Write("Enter any text: ");
 			string text = Console.ReadLine()!;
+
+			// input validation: the input is null, empty string (ENTER), tabs, spaces. Validate null or whitespace-only input.
+			if (string.IsNullOrWhiteSpace(text))
+			{
+				System.Console.Write("Enter some text: ");
+				continue;
+			}
 			for (int i = 1; i <= 10; i++)
 			{
 				Console.Write($"{i}. {text}, ");
