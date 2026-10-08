@@ -137,20 +137,34 @@
 			break;
 
 		case "3":
-			System.Console.Write("Enter any text: ");
-			string text = Console.ReadLine()!;
+			string text;
 
-			// input validation: the input is null, empty string (ENTER), tabs, spaces. Validate null or whitespace-only input.
-			if (string.IsNullOrWhiteSpace(text))
+			while (true)
 			{
-				System.Console.Write("Enter some text: ");
-				continue;
+				System.Console.Write("Enter any text: ");
+				text = Console.ReadLine()!;
+
+				// input validation: the input is null, empty string (ENTER), tabs, spaces. Validate null or whitespace-only input.
+				if (string.IsNullOrWhiteSpace(text))
+				{
+					System.Console.WriteLine("Invalid, the text is empty.");
+					continue;
+				}
+				break;
 			}
+
 			for (int i = 1; i <= 10; i++)
 			{
-				Console.Write($"{i}. {text}, ");
+				if (i == 10)
+				{
+					Console.Write($"{i}. {text}");
+				}
+				else
+				{
+					Console.Write($"{i}. {text}, ");
+				}
 			}
-			System.Console.WriteLine("");
+			System.Console.WriteLine("\n");
 			break;
 
 		case "4":
@@ -173,11 +187,11 @@
 			}
 			break;
 		case "0":
-			System.Console.WriteLine("\n\tGood bye and come back soon to Cinema!");
+			System.Console.WriteLine("\n\tGoodbye! Thanks for visiting our cinema. See you next time!\n");
 			return;
 
 		default:
-			System.Console.WriteLine("Invalid choice. Select 1, 2 or 0");
+			System.Console.WriteLine("Invalid choice. Select 1, 2, 3, 4 or 0");
 			break;
 	}
 }

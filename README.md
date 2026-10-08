@@ -105,6 +105,7 @@ To access this function, a case must be created in the main menu for "1". This m
 7. Otherwise, the program should print: Standard price: 120 SEK
 
 ## Menu Option 2: Group price
+
 We also want to have the possibility to calculate the price for an entire group. Add this option to the main menu (a case "2"). It is also acceptable to have the option in a submenu.
 
 First, we enter how many people are going to the cinema. Then we ask for the age of each person and finally print a summary in the console containing the following:
@@ -158,3 +159,25 @@ Do not forget to comment your code carefully so that you or others can easily un
 3. Add anything that you think would be interesting to include or that you would like to practice.
 
 Good luck!
+
+# Screen shots
+
+## Menu 0
+
+<img src="assets/00-menu0.png" alt="Ciname Menu screenshot" width="500">;
+
+## Menu 1
+
+<img src="assets/01-menu1.png" alt="Ciname Menu screenshot" width="500">;
+
+## Menu 2
+
+<img src="assets/02-menu2.png" alt="Ciname Menu screenshot" width="500">;
+
+## Menu 3
+
+<img src="assets/03-menu3.png" alt="Ciname Menu screenshot" width="500">;
+
+## Menu 4
+
+<img src="assets/04-menu4.png" alt="Ciname Menu screenshot" width="500">;
